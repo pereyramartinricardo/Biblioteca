@@ -1,5 +1,10 @@
 package com.model;
 
+/**
+ * Representacion de un libro alojado en el sistema de biblioteca.
+ * 
+ * Contiene información como lo son el ISBN, título, autor/a, año de publicación y disponibilidad para préstamo.
+ */
 public class Libro {
     private String ISBN;
     private String titulo;
@@ -7,8 +12,11 @@ public class Libro {
     private int anio;
     private boolean disponible;
 
-
-    //constructor por defecto
+    /**
+     * Constructor por defecto.
+     * Crea un libro vacío con valores por defecto.
+     * La disponibilidad se inicializa como verdadera.
+     */
     public Libro () {
         this.ISBN = "";
         this.titulo = "";
@@ -17,7 +25,15 @@ public class Libro {
         this.disponible = true;
     }
 
-    //constructor parametizado
+    /**
+     * Constructor parametizado.
+     * Crea un libro con todos sus datos.
+     * 
+     * @param ISBN código identificador del libro.
+     * @param titulo titulo del libro.
+     * @param autor autor/a del libro.
+     * @param disponible estado de disponibilidad del libro para el préstamo.
+     */
     public Libro (String ISBN,String titulo,String autor,int anio,boolean disponible){
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -62,7 +78,11 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    //tooString
+    /**
+     * Devuelve una representación en texto del libro.
+     * 
+     * @return información completa del libro.
+     */
     @Override
     public String toString() {
         return "Libro encontrado ISBN:" + ISBN + " Titulo: " + titulo + " Autor: " + autor + " ISBN: " + ISBN + " Año: " + anio + " Disponibilidad: " + disponible;

@@ -10,9 +10,19 @@ import com.model.Libro;
 import com.service.Biblioteca;
 import com.service.Registro;
 
-
+/**
+ * Clase principal del sistema de biblioteca.
+ * 
+ * Se encarga de la creación de libros, registrar estudiantes, realizar búsquedas, registrar prestamos, manejar excepciones y registrar devoluciones.
+ */
 public class App 
 {
+    /**
+     * @param args argumentos recibidos por consola.
+     * @throws Libronodisponible si se intenta prestar un libro no disponible.
+     * @throws Estudiantefalso si se busca un estudiante inexistente.
+     * @throws Limiteprestamo si se supera el límite de prestamos.
+     */
     public static void main( String[] args ) throws Libronodisponible, Estudiantefalso, Limiteprestamo
     {
         Biblioteca biblio = new Biblioteca();
@@ -42,6 +52,7 @@ public class App
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
+
         //Registro de prestamos
         try {
         registro.registrarPrestamo("1","001");
@@ -63,6 +74,7 @@ public class App
         } catch (Libronodisponible | Estudiantefalso | Limiteprestamo e){
             System.out.println(e.getMessage());
         }
+        
         //Excepcion limite de prestamos
         try {
         registro.registrarPrestamo("4","001");
@@ -70,6 +82,7 @@ public class App
         } catch (Libronodisponible | Estudiantefalso | Limiteprestamo e){
             System.out.println(e.getMessage());
         }
+
         //Excepcion libro no disponible
         try {
         registro.registrarPrestamo("5","001");
@@ -77,12 +90,9 @@ public class App
         } catch (Libronodisponible | Estudiantefalso | Limiteprestamo e){
             System.out.println(e.getMessage());
         }
+
         //Registro devolucion
         double multa =registro.registrarDevolucion("1", 15, 1000);
         System.out.println("Multa calculada: " + multa);
-        
-    
-
-
     }
 }
