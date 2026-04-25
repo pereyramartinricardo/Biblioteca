@@ -1,0 +1,1 @@
+Consolidar los fundamentos de la Programación Orientada a Objetos aplicando encapsulamiento, estructuras de datos (Collections Framework) y manejo de excepciones en un contexto realista de gestión de préstamos bibliotecarios.
